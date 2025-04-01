@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waterpark Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+		 body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .hero {
+            position: relative;
+            height: 400px;
+            background: url('https://www.waghville.com/wp-content/uploads/2024/03/7-Resort-min-scaled.jpeg') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 100px;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 153, 255, 0.7); /* Blue overlay */
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .underline {
+            width: 60px;
+            height: 4px;
+            background: #feca57; /* Yellow underline */
+            margin-top: 10px;
+        }
+		.section {
+            padding: 60px 0;
+        }
+        .icon {
+            color: #17a2b8;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+        .btn-yellow {
+            background-color: #ffc107;
+            color: #000;
+            font-weight: bold;
+            border: none;
+        }
+        .btn-yellow:hover {
+            background-color: #e0a800;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .footer {
+            background-color: #FFD700; /* Yellow background */
+            color: black;
+            padding: 50px 0;
+        }
+        .footer h5 {
+            font-weight: bold;
+        }
+        .footer a {
+            color: black;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .social-icons a {
+            font-size: 24px;
+            margin-right: 15px;
+            color: black;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            color: #0078d4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1 class="title">Luxury Resort</h1>
+        <div class="underline"></div>
+    </div>
+</div>
+<div class="container section">
+    <div class="row align-items-center">
+        <!-- Left Column -->
+        <div class="col-lg-6">
+            <h2 class="fw-bold">Luxury Resort</h2>
+            <p>
+				With Comfort, safety & our heartfelt hospitality, experience luxury with waghville ! Escape to one of our 42 luxurious resorts, surrounded by the serenity of the jungle. Each accommodation is designed to offer the perfect blend of comfort and sophistication, providing a tranquil retreat after a day of adventure
+            </p>
+            <ul class="list-unstyled">
+                <li class="fw-bold"><i class="icon bi bi-check-circle-fill"></i> Deluxe Room</li>
+                <li class="fw-bold"><i class="icon bi bi-check-circle-fill"></i> Suites</li>
+            </ul>
+            <button class="btn btn-yellow px-4 py-2">Book Now</button>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-lg-6">
+            <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+				<div class="carousel-inner">
+				  <div class="carousel-item active">
+					<img src="https://www.waghville.com/wp-content/uploads/2024/03/1Resort-min-scaled.jpeg" class="d-block w-100" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="https://www.waghville.com/wp-content/uploads/2024/03/3-Resort-min-scaled.jpeg" class="d-block w-100" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="https://www.waghville.com/wp-content/uploads/2024/03/4-Resort-min-scaled.jpeg" class="d-block w-100" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="https://www.waghville.com/wp-content/uploads/2024/03/5-Resort-min-scaled.jpeg" class="d-block w-100" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="https://www.waghville.com/wp-content/uploads/2024/03/6-Resort-min-scaled.jpeg" class="d-block w-100" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="https://www.waghville.com/wp-content/uploads/2024/03/7-Resort-min-scaled.jpeg" class="d-block w-100" alt="...">
+				  </div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+				  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				  <span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+				  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				  <span class="visually-hidden">Next</span>
+				</button>
+			  </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+
+
+<div class="footer">
+	<div class="container">
+		<div class="row">
+
+			<!-- Logo and Description -->
+			<div class="col-lg-4 mb-4">
+				<img src="https://www.waghville.com/wp-content/uploads/2024/03/cropped-Waghville-Logo-110x75.png" alt="Waghville Logo" class="mb-3">
+				<p>Waghville Waterpark and Resorts is a must-visit destination for anyone looking for a fun-filled day out or a relaxing getaway in Nagpur. With its exciting water rides, great food, and comfortable accommodation options, it is the perfect place to enjoy some quality time with family and friends.</p>
+				<div class="social-icons">
+					<a href="#"><i class="bi bi-facebook"></i></a>
+					<a href="#"><i class="bi bi-youtube"></i></a>
+					<a href="#"><i class="bi bi-instagram"></i></a>
+					<a href="#"><i class="bi bi-pinterest"></i></a>
+				</div>
+			</div>
+
+			<!-- Quick Links -->
+			<div class="col-lg-2 mb-4">
+				<h5>Quick Links</h5>
+				<ul class="list-unstyled">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Facilities</a></li>
+					<li><a href="#">Packages</a></li>
+					<li><a href="#">Rules</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+
+			<!-- Contact Info -->
+			<div class="col-lg-3 mb-4">
+				<h5>Contact Info</h5>
+				<p><strong>Site Address:</strong><br>
+				Umari, Ta. Hingna, Bor Jungle<br>
+				Adegaon Road, Nagpur(MH) - 440023</p>
+
+				<p><strong>Office Address:</strong><br>
+				Ground Floor, 32, Shree Ganesh Appt. Kotwal Nagar, Khamla Square, Nagpur - 440022</p>
+
+				<p><strong>Email:</strong><br>
+				<a href="mailto:waghville@gmail.com">waghvillegmail.com</a></p>
+
+				<p><strong>Phone:</strong><br>
+				9404090001 | 7720077661 | 9699758304</p>
+			</div>
+
+			<!-- Other Links -->
+			<div class="col-lg-3">
+				<h5>Other Links</h5>
+				<ul class="list-unstyled">
+					<li><a href="#">Terms & Conditions</a></li>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Site Disclaimer</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

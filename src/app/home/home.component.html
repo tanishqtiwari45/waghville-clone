@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waterpark Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+        video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: #fff;
+            padding: 0 60px;
+        }
+        .btn-yellow {
+            background: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        .btn-yellow:hover {
+            background-color: #000;
+			border: 2px solid yellow;
+        }
+		.about-section {
+            background: #00AEEF; /* Blue background */
+            color: #fff;
+            padding: 80px 0;
+        }
+        .about-heading {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .about-text {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .btn-yellow {
+            background: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        .btn-yellow:hover {
+            background: #ffdb4d;
+            color: #000;
+        }
+        .icon-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+            color: #000;
+        }
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background: #ffcc00;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .icon-circle img {
+            width: 40px;
+            height: 40px;
+        }
+        .feature-text {
+            color: #fff;
+            font-weight: bold;
+        }
+		.attractions-section {
+            text-align: center;
+            padding: 80px 0;
+            background: #fff;
+        }
+        .section-title {
+            font-size: 18px;
+            color: #00AEEF; /* Blue color for the section heading */
+            font-weight: bold;
+        }
+        .main-heading {
+            font-size: 48px;
+            font-weight: bold;
+            color: #000; /* Black color for the main heading */
+        }
+        .underline {
+            width: 80px;
+            height: 4px;
+            background: #ffcc00; /* Yellow underline */
+            margin: 10px auto;
+        }
+        .sub-text {
+            font-size: 18px;
+            color: #555;
+            margin-top: 20px;
+        }
+		.card {
+            border: 1px solid #00AEEF;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .card-text {
+            font-size: 16px;
+            color: #555;
+        }
+        .read-more {
+            color: #00AEEF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+		.section-title {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .underline {
+            width: 50px;
+            height: 3px;
+            background-color: #FFC107;
+            margin: 10px auto;
+        }
+        .description {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .btn-yellow {
+            background-color: #FFD700;
+            color: #000;
+            font-weight: bold;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+        .btn-yellow:hover {
+            background-color: #FFC107;
+            color: #000;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+		.card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+        .promo-card {
+			height: auto;
+			width: auto;
+            background-color: #00AEEF;
+            color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        .price {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .btn-outline-primary, .btn-yellow {
+            padding: 10px 30px;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .btn-yellow {
+            background-color: #FFD700;
+            color: #000;
+        }
+        .btn-yellow:hover {
+            background-color: #FFC107;
+            color: #000;
+        }
+		.gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 30px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 992px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+		.adventure-section {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #ffffff;
+            position: relative;
+        }
+        .adventure-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #000;
+        }
+        .adventure-section p {
+            font-size: 1rem;
+            color: #555;
+            margin: 10px 0;
+        }
+        .btn-purchase {
+            background-color: #ffc107;
+            color: #000;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn-purchase:hover {
+            background-color: #ff9800;
+            color: #fff;
+        }
+        .splash {
+            position: absolute;
+            width: 150px;
+            height: auto;
+        }
+        .splash-left {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .splash-right {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-90%);
+        }
+        @media (max-width: 768px) {
+            .splash {
+                width: 100px;
+            }
+        }
+		.footer {
+            background-color: #FFD700; /* Yellow background */
+            color: black;
+            padding: 50px 0;
+        }
+        .footer h5 {
+            font-weight: bold;
+        }
+        .footer a {
+            color: black;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .social-icons a {
+            font-size: 24px;
+            margin-right: 15px;
+            color: black;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            color: #0078d4;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Video Background -->
+<div class="video-container">
+    <video autoplay loop muted playsinline>
+        <source src="video.mp4" type="video/mp4">  <!-- Replace 'video.mp4' with your video path -->
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- Content Section -->
+<section class="content">
+    <h6 class="text-uppercase fw-bold">Nagpur’s Premier Waterpark and Resort</h6>
+    <h1 class="display-4 fw-bold">Dive into Adventure at <br>Waghville: Where Waves <br>Meet Thrills!</h1>
+    <p class="lead">Your ultimate destination for thrilling water rides, delicious dining, and unforgettable getaways in Nagpur!</p>
+    <a href="#" class="btn btn-yellow">Explore More</a>
+</section>
+
+<!-- About Section -->
+<section class="about-section">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <!-- Left Content -->
+            <div class="col-lg-6">
+                <h6 class="text-warning">About Us</h6>
+                <h2 class="about-heading">Central India’s leading <br> waterpark, adventure, <br> amusement park and resort</h2>
+                <button class="btn btn-yellow mt-3">Know More</button>
+            </div>
+
+            <!-- Right Content -->
+            <div class="col-lg-6">
+                <p class="about-text">
+                    Welcome to Waghville Waterpark & Resort, where the perfect blend of adventure, luxury, and natural beauty awaits you. 
+                    Dive into excitement with thrilling slides, relaxing lazy rivers, and refreshing wave pools. 
+                    Nestled in the heart of a sprawling 54-acre oasis near the enchanting Bor Tiger forest, 
+                    our resort is a haven for thrill-seekers, nature lovers, and those seeking a blissful escape from the routine. 
+                    Perfect for families and thrill-seekers alike, Waghville promises endless aquatic adventures. 
+                    Join us for a splashing good time!
+                </p>
+                
+                <div class="row mt-4">
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="icon-box ps-4">
+                            <div class="icon-circle">
+                                <img src="" alt="Area">
+                            </div>
+                        </div>
+                        <p class="feature-text mt-2">Spread across<br> 54+ acre of large area</p>
+                    </div>
+
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="icon-box ps-4">
+                            <div class="icon-circle">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1046/1046862.png" alt="Activities">
+                            </div>
+                        </div>
+                        <p class="feature-text mt-2">30+ fun &<br> adventures activity</p>
+                    </div>
+
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="icon-box ps-4">
+                            <div class="icon-circle">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1995/1995543.png" alt="Wildlife">
+                            </div>
+                        </div>
+                        <p class="feature-text mt-2">Adjacent to Bor<br> Wildlife Sanctuary</p>
+                    </div>
+
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="icon-box ps-4">
+                            <div class="icon-circle">
+                                <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Distance">
+                            </div>
+                        </div>
+                        <p class="feature-text mt-2">Nearest to<br> Nagpur, just 35 km</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="attractions-section">
+    <div class="container">
+        <h6 class="section-title">Attractions & Amenities</h6>
+        <h1 class="main-heading">Your All-in-One Destination!</h1>
+        <div class="underline"></div>
+        <p class="sub-text">
+            A complete package of entertainment, fun, pleasant stay & adventures at Nagpur
+        </p>
+    </div>
+</section>
+<!-- Activities Section -->
+<div class="container py-5">
+    <div class="row g-4">
+
+        <!-- Water Park Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+                <img src="https://www.waghville.com/wp-content/uploads/2024/03/2-BG-min-1536x1024.jpeg" alt="Water Park">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Water Park</h5>
+                    <p class="card-text">Dive into a world of aquatic fun with our state-of-the-art Water Park.</p>
+                    <a routerlink="/waterpark" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Adventure Sports Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+                <img src="https://www.waghville.com/wp-content/uploads/2024/03/10BG-min-1536x1023.jpeg" alt="Adventure Sports">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Adventure Sports</h5>
+                    <p class="card-text">Our adventure park boasts an array of rides that will get your heart racing.</p>
+                    <a routerLink="/adventure" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- School Picnic Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+                <img src="https://www.waghville.com/wp-content/uploads/2024/03/19-BG-min-1536x1024.jpeg" alt="School Picnic">
+                <div class="card-body text-center">
+                    <h5 class="card-title">School Picnic</h5>
+                    <p class="card-text">Unlimited fun, masti with unforgettable memory.</p>
+                    <a routerLink="/school" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container py-5">
+    <div class="row g-4">
+
+        <!-- Luxury Resort Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+                <img src="https://www.waghville.com/wp-content/uploads/2024/03/Resort-min-1536x1023.png" alt="Water Park">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Luxury Resort</h5>
+                    <p class="card-text">With Comfort, safety & our heartfelt hospitality, experience luxury with Waghville.</p>
+                    <a routerLink="/luxury" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Adventure Sports Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+                <img src="https://www.waghville.com/wp-content/uploads/2025/02/New-eding-Image-min-1536x999.png" alt="Adventure Sports">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Destination Wedding</h5>
+                    <p class="card-text">Celebrate the union of love amidst the picturesque surroundings of Waghville.</p>
+                    <a routerLink="/destination-wedding" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- School Picnic Card -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+                <img src="https://www.waghville.com/wp-content/uploads/2024/03/Meetings-min-1536x1023.png" alt="School Picnic">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Corporate Meetings & Party</h5>
+                    <p class="card-text">With spacious and well-equipped facilities, we ensure your events are a success.</p>
+                    <a routerLink="/corporate" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container-fluid text-center py-5 bg-white">
+    <h2 class="section-title">Our Packages</h2>
+    <div class="underline"></div>
+    <p class="description">
+        Choose your perfect package and indulge in an unforgettable experience filled with adventure, 
+        relaxation, and lasting memories.
+    </p>
+    <a href="#" class="btn btn-yellow">See All Packages</a>
+	<div class="container-fluid py-5">
+		<div class="row g-4">
+			<!-- Fun Package -->
+			<div class="col-lg-6">
+				<div class="card text-center">
+					<h3 class="fw-bold">Fun Package</h3>
+					<p class="price">₹ 700 / person</p>
+					<p>Water Park + Amusement Park + All adventures and Fun activity</p>
+					<p>Time: 10 AM To 6 PM</p>
+					<p>Note: 10 am To 4 pm Waterpark, 4 pm To 6 pm Adventure and Amusement Activity</p>
+					<p>Costumes extra – ₹ 100 for girl and ₹ 100 for boys</p>
+					<button class="btn btn-outline-primary">Book Now</button>
+				</div>
+			</div>
+	
+			<!-- Promotional Package -->
+			<div class="col-lg-6">
+				<div class="promo-card text-center">
+					<h3 class="fw-bold">Hurry! Special Promotional Offer</h3>
+					<p class="fw-bold" style="color: yellow;">Fun With Food</p>
+					<p class="price">₹ 1200 / person</p>
+					<p>New Water Slides + Kids Zone and Amusement Activities</p>
+					<p>Water Park + Amusement Activities + Adventure Activities + Lunch (Veg) + Tea</p>
+					<p>Time: 10 AM To 6 PM</p>
+					<p>Costumes and locker extra – ₹ 80 each</p>
+					<button class="btn btn-yellow">Book Now</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid" style="background-color: #00AEEF;">
+	<h6 class="text-center pt-5 text-warning">Memories in Motion</h6>
+	<h3 class="text-center py-2 text-light">Explore Our Stunning Photo Gallery</h3>
+	<div class="container-fluid">
+		<div class="gallery">
+			<img src="https://www.waghville.com/wp-content/uploads/2024/03/Meetings-min-1536x1023.png" alt="Image 1">
+			<img src="https://www.waghville.com/wp-content/uploads/2024/03/Resort-min-1536x1023.png" alt="Image 2">
+			<img src="https://www.waghville.com/wp-content/uploads/2024/03/Destination-Wedding-min-1536x1023.png" alt="Image 3">
+			<img src="https://www.waghville.com/wp-content/uploads/2024/03/2-BG-min-1536x1024.jpeg" alt="Image 4">
+			<img src="https://www.waghville.com/wp-content/uploads/2024/03/10BG-min-1536x1023.jpeg" alt="Image 5">
+			<img src="https://www.waghville.com/wp-content/uploads/2024/03/19-BG-min-1536x1024.jpeg" alt="Image 6">
+			<img src="https://www.waghville.com/wp-content/uploads/2024/03/19WP-min-1536x1023.jpeg" alt="Image 7">
+			<img src="https://www.waghville.com/wp-content/uploads/2024/03/18WP-min-1536x1023.jpeg" alt="Image 8">
+			<img src="https://www.waghville.com/wp-content/uploads/2024/03/10SH-min-1536x864.jpeg" alt="Image 9">
+			<img src="https://www.waghville.com/wp-content/uploads/2024/03/18-SHBG-min-1536x864.jpeg" alt="Image 10">
+			<img src="https://www.waghville.com/wp-content/uploads/2024/03/17-SHBG-min-1536x864.jpeg" alt="Image 11">
+			<img src="https://www.waghville.com/wp-content/uploads/2024/03/14SH-min-1536x864.jpeg" alt="Image 12">
+		</div>
+	</div>
+</div>
+<div class="adventure-section">
+    <img src="drop.png" alt="Splash Left" class="splash splash-left">
+    
+    <div class="container">
+        <h1>Book Your Adventure Today!</h1>
+        <p>Plan your perfect getaway today and experience the thrill of WaghVille.</p>
+        <p>Book now for endless fun and relaxation!</p>
+        <a href="#" class="btn btn-purchase">Purchase now</a>
+    </div>
+
+    <img src="drop.png" alt="Splash Right" class="splash splash-right">
+</div>
+<!-- Footer Section -->
+
+
+<div class="footer">
+	<div class="container">
+		<div class="row">
+
+			<!-- Logo and Description -->
+			<div class="col-lg-4 mb-4">
+				<img src="https://www.waghville.com/wp-content/uploads/2024/03/cropped-Waghville-Logo-110x75.png" alt="Waghville Logo" class="mb-3">
+				<p>Waghville Waterpark and Resorts is a must-visit destination for anyone looking for a fun-filled day out or a relaxing getaway in Nagpur. With its exciting water rides, great food, and comfortable accommodation options, it is the perfect place to enjoy some quality time with family and friends.</p>
+				<div class="social-icons">
+					<a href="#"><i class="bi bi-facebook"></i></a>
+					<a href="#"><i class="bi bi-youtube"></i></a>
+					<a href="#"><i class="bi bi-instagram"></i></a>
+					<a href="#"><i class="bi bi-pinterest"></i></a>
+				</div>
+			</div>
+
+			<!-- Quick Links -->
+			<div class="col-lg-2 mb-4">
+				<h5>Quick Links</h5>
+				<ul class="list-unstyled">
+					<li><a routerLink="/home"></a></li>
+					<li><a href="#">Facilities</a></li>
+					<li><a routerLink="/packages">Packages</a></li>
+					<li><a href="#">Rules</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+
+			<!-- Contact Info -->
+			<div class="col-lg-3 mb-4">
+				<h5>Contact Info</h5>
+				<p><strong>Site Address:</strong><br>
+				Umari, Ta. Hingna, Bor Jungle<br>
+				Adegaon Road, Nagpur(MH) - 440023</p>
+
+				<p><strong>Office Address:</strong><br>
+				Ground Floor, 32, Shree Ganesh Appt. Kotwal Nagar, Khamla Square, Nagpur - 440022</p>
+
+				<p><strong>Email:</strong><br>
+				<a href="mailto:waghville@gmail.com">waghvillegmail.com</a></p>
+
+				<p><strong>Phone:</strong><br>
+				9404090001 | 7720077661 | 9699758304</p>
+			</div>
+
+			<!-- Other Links -->
+			<div class="col-lg-3">
+				<h5>Other Links</h5>
+				<ul class="list-unstyled">
+					<li><a href="#">Terms & Conditions</a></li>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Site Disclaimer</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

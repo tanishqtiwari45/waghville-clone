@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .about-section {
+            background: #00B4FF; 
+            color: white;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding: 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-section h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .underline {
+            width: 80px;
+            height: 4px;
+            background: #FFD700;
+            margin-top: 10px;
+        }
+        .splash-left, .splash-right {
+            position: absolute;
+            width: 150px;
+            height: auto;
+        }
+        .splash-left {
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+			position: absolute;
+			top:80px;
+
+
+        }
+        .splash-right {
+            right: 30px;
+            top: 50%;
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 20px;
+                text-align: center;
+                height: 200px;
+            }
+            .splash-left, .splash-right {
+                width: 100px;
+            }
+        }
+
+		.section-container {
+            background: #FFFFFF;
+            padding: 80px 100px;
+            color: #000;
+        }
+        .left-section h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .right-section h4 {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .right-section p {
+            font-size: 16px;
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        @media (max-width: 992px) {
+            .section-container {
+                padding: 40px 20px;
+            }
+            .left-section h1 {
+                font-size: 28px;
+            }
+            .right-section h4 {
+                font-size: 18px;
+            }
+        }
+		.legacy-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: #fff;
+            color: #000;
+        }
+        .legacy-section h2 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .legacy-section .line {
+            width: 50px;
+            height: 4px;
+            background: #f4c400;
+            margin: 10px auto;
+        }
+        .legacy-section p {
+            font-size: 16px;
+            color: #6c757d;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        @media (max-width: 992px) {
+            .legacy-section h2 {
+                font-size: 28px;
+            }
+            .legacy-section p {
+                font-size: 14px;
+            }
+        }
+		.card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 60px 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #24c0f1;
+            color: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 550px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: #f4c400;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            margin: 0 auto 20px;
+        }
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .highlight {
+            color: #f4c400;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        @media (max-width: 992px) {
+            .card {
+                padding: 30px;
+            }
+        }
+		.carousel-item img {
+            width: 100%;
+            height: 500px; 
+            object-fit: cover;
+        }
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: yellow; /* Yellow arrows */
+            border-radius: 50%;
+            padding: 15px;
+        }
+		.footer {
+            background-color: #FFD700; /* Yellow background */
+            color: black;
+            padding: 50px 0;
+        }
+        .footer h5 {
+            font-weight: bold;
+        }
+        .footer a {
+            color: black;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .social-icons a {
+            font-size: 24px;
+            margin-right: 15px;
+            color: black;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            color: #0078d4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="about-section mt-5" >
+    <img src="drop.png" alt="Splash Left" class="splash-left">
+    <div>
+        <h1>About Us</h1>
+        <div class="underline"></div>
+    </div>
+    <img src="drop.png" alt="Splash Right" class="splash-right">
+</div>
+
+<div class="section-container">
+    <div class="row">
+        <div class="col-lg-5 left-section">
+            <h1>Welcome to Waghville <br> Hospitality & <br> Multiprojects Pvt. Ltd</h1>
+        </div>
+        <div class="col-lg-7 right-section">
+            <h4>A perfect blend of adventure, luxury, and natural beauty awaits you.</h4>
+            <p>
+                Dive into excitement with thrilling slides, relaxing lazy rivers, and refreshing wave pools. 
+                Nestled in the heart of a sprawling 54-acre oasis near the enchanting Bor Tiger forest. 
+                Our resort is a haven for thrill-seekers, nature lovers, and those seeking a blissful escape from the routine. 
+                Perfect for families and thrill-seekers alike, Waghville promises endless aquatic adventures. 
+                Join us for a splashing good time!
+            </p>
+        </div>
+    </div>
+</div>
+<div class="legacy-section">
+    <h2>15 Years Legacy</h2>
+    <div class="line"></div>
+    <p>
+        Waghville Waterpark & Resort stands as a testament to the founders' initial vision and commitment, 
+        offering a multifaceted destination where entertainment, relaxation, and community development harmoniously coexist.
+    </p>
+</div>
+
+<div class="container">
+    <div class="row g-4">
+
+        <!-- Roots in Agro Tourism -->
+        <div class="col-lg-6 col-md-12">
+            <div class="card h-100">
+                <div class="icon-circle">
+                    🌿
+                </div>
+                <h3>Roots in <span class="highlight">Agro Tourism</span></h3>
+                <p>
+                    Waghville has a humble beginning rooted in agro tourism and farmhouses, taking its first steps in 2009. 
+                    The founders, Narendra Wagh and Surendra Wagh, envisioned a unique destination that not only celebrated the 
+                    natural beauty of Umari, Wagh but also provided a haven for entertainment and relaxation. This initial foray 
+                    laid the foundation for what would later become Waghville Waterpark & Resort.
+                </p>
+            </div>
+        </div>
+
+        <!-- Mission to Serve the Community -->
+        <div class="col-lg-6 col-md-12">
+            <div class="card h-100">
+                <div class="icon-circle">
+                    👥
+                </div>
+                <h3>Mission to <span class="highlight">Serve the Community</span></h3>
+                <p>
+                    The driving force behind Waghville's establishment was not only to create a recreational retreat but also 
+                    to contribute to the local community. The founders aimed to provide employment opportunities for the people 
+                    of Umari, Wagh, thereby fostering economic growth and sustainability in the region.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid py-5">
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+        
+        <div class="carousel-inner">
+            
+            <!-- First Slide -->
+            <div class="carousel-item active">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="https://www.waghville.com/wp-content/uploads/2024/03/3WP-min-scaled.jpeg" alt="Water Slide" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://www.waghville.com/wp-content/uploads/2024/03/4Ad-min-scaled.jpeg" alt="Swimming Pool" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Slide -->
+            <div class="carousel-item active">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="https://www.waghville.com/wp-content/uploads/2024/03/5WP-min-scaled.jpeg" alt="Adventure Ride" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://www.waghville.com/wp-content/uploads/2024/03/4WP-min-scaled.jpeg" alt="Water Fun" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="https://www.waghville.com/wp-content/uploads/2024/03/3Ad-min-scaled.jpeg" alt="Adventure Ride" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://www.waghville.com/wp-content/uploads/2024/03/7WP-min-scaled.jpeg" alt="Water Fun" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="https://www.waghville.com/wp-content/uploads/2024/03/5WP-min-scaled.jpeg" alt="Adventure Ride" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://www.waghville.com/wp-content/uploads/2024/03/4WP-min-scaled.jpeg" alt="Water Fun" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="https://www.waghville.com/wp-content/uploads/2024/03/2-BG-min-2-scaled.jpeg" alt="Adventure Ride" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://www.waghville.com/wp-content/uploads/2024/03/5Ad-min-scaled.jpeg" alt="Water Fun" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation Arrows -->
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">  
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>  -->
+
+    </div>
+</div>
+<!-- Footer Section -->
+
+
+<div class="footer">
+	<div class="container">
+		<div class="row">
+
+			<!-- Logo and Description -->
+			<div class="col-lg-4 mb-4">
+				<img src="https://www.waghville.com/wp-content/uploads/2024/03/cropped-Waghville-Logo-110x75.png" alt="Waghville Logo" class="mb-3">
+				<p>Waghville Waterpark and Resorts is a must-visit destination for anyone looking for a fun-filled day out or a relaxing getaway in Nagpur. With its exciting water rides, great food, and comfortable accommodation options, it is the perfect place to enjoy some quality time with family and friends.</p>
+				<div class="social-icons">
+					<a href="#"><i class="bi bi-facebook"></i></a>
+					<a href="#"><i class="bi bi-youtube"></i></a>
+					<a href="#"><i class="bi bi-instagram"></i></a>
+					<a href="#"><i class="bi bi-pinterest"></i></a>
+				</div>
+			</div>
+
+			<!-- Quick Links -->
+			<div class="col-lg-2 mb-4">
+				<h5>Quick Links</h5>
+				<ul class="list-unstyled">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Facilities</a></li>
+					<li><a href="#">Packages</a></li>
+					<li><a href="#">Rules</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+
+			<!-- Contact Info -->
+			<div class="col-lg-3 mb-4">
+				<h5>Contact Info</h5>
+				<p><strong>Site Address:</strong><br>
+				Umari, Ta. Hingna, Bor Jungle<br>
+				Adegaon Road, Nagpur(MH) - 440023</p>
+
+				<p><strong>Office Address:</strong><br>
+				Ground Floor, 32, Shree Ganesh Appt. Kotwal Nagar, Khamla Square, Nagpur - 440022</p>
+
+				<p><strong>Email:</strong><br>
+				<a href="mailto:waghville@gmail.com">waghvillegmail.com</a></p>
+
+				<p><strong>Phone:</strong><br>
+				9404090001 | 7720077661 | 9699758304</p>
+			</div>
+
+			<!-- Other Links -->
+			<div class="col-lg-3">
+				<h5>Other Links</h5>
+				<ul class="list-unstyled">
+					<li><a href="#">Terms & Conditions</a></li>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Site Disclaimer</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
